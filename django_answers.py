@@ -64,3 +64,18 @@ def problem_six(request):
 
     return complete(request)
 
+#Question 7:
+
+def problem_seven(request):
+    Bread = Student.objects.get(pk=11).delete
+    # Make sure to set this equal to the primary key of the row you just created!
+    student_id = 11
+
+    try:
+        student = Student.objects.get(pk=student_id)
+    except ObjectDoesNotExist:
+        print('Great! It failed and couldnt find the object because we deleted it!')
+
+    return complete(request)
+
+
